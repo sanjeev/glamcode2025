@@ -8,7 +8,7 @@ const ReactSlider = dynamic(() => import("react-slick"), {
     ),
 });
 export default function Occasionspecial({ content }) {
-    console.log(content);
+
     const settings = {
         dots: false,
         infinite: true,
