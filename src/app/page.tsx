@@ -98,7 +98,7 @@ export default async function Home() {
               <div className="flex justify-center flex-wrap gap-2 gap-y-7  md:gap-[12px] 2xl:gap-[36px]">
                 <div className="flex flex-col text-center  w-[171px] md:w-[296px] ">
                   <dt className="order-last text-lg font-bold text-gray-700 ">
-                    20+ Years'
+                    20+ Years
                   </dt>
                   <dt className="order-last text-lg font-bold text-gray-500">
                     Credibility
