@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import dynamic from "next/dynamic";
 const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
 
@@ -51,12 +51,12 @@ export default async function Home() {
     return <div>error</div>;
   }
 
-  let sliderImages = data[0].slider_images || [];
-  let maincategory = data[1].maincategory || [];
-  let bannercategory = data[1].banner || [];
-  let review = data[1].review || [];
-  let faqs = data[1].faqs || [];
-  let home = data[1].home || {};
+  const sliderImages = data[0].slider_images || [];
+  const maincategory = data[1].maincategory || [];
+  const bannercategory = data[1].banner || [];
+  const review = data[1].review || [];
+  const faqs = data[1].faqs || [];
+  const home = data[1].home || {};
 
   return (
     <div className="">

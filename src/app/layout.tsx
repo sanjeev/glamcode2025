@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
-import Head from "next/head";
+
 const ReactHeader = dynamic(() => import("@/app/components/header"));
 const ReactFooter = dynamic(() => import("@/app/components/footer"));
 // import Header from "@/app/components/header";
