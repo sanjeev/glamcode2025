@@ -1,7 +1,7 @@
 "use client";
 import Slider from "react-slick";
 import { useState } from "react";
-
+import Image from "next/image";
 export default function CustomerTestimonials({ content }: any) {
   const settings = {
     className: "lightbox-slide",
@@ -76,12 +76,18 @@ export default function CustomerTestimonials({ content }: any) {
                   <div key={index} className="p-2">
                     <blockquote className=" p-6 sm:p-8 bg-[#ffffff] rounded-lg shadow-md">
                       <div className="flex items-center gap-4">
-                        <img
+                        {/* <img
                           alt={slide.name}
                           src={slide.reviews_image_url}
                           className="h-14 w-14 rounded-full object-cover"
+                        /> */}
+                        <Image
+                          src={slide.reviews_image_url}
+                          alt={slide.name}
+                          width={80}
+                          height={80}
+                          className="h-14 w-14 rounded-full object-cover"
                         />
-
                         <div>
                           <p className="text-lg font-medium text-gray-800">
                             {slide.name}
