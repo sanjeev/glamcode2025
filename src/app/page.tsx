@@ -1,7 +1,7 @@
 // import Image from "next/image";
 import dynamic from "next/dynamic";
 const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
-
+import Image from "next/image";
 const ReactSliderSlick = dynamic(() => import("@/app/components/slider"), {
   loading: () => (
     <div className="w-[100%] h-[429px] bg-gray-200 animate-pulse" />
@@ -107,11 +107,13 @@ export default async function Home() {
                   <dd
                     className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
                   >
-                    <img
+                    <Image
                       alt="20+ Years"
                       className="m-auto"
                       src="/images/years.png"
-                      style={{ width: "70px", height: "70px" }}
+                      width={80}
+                      height={80}
+                      priority
                     />
                   </dd>
                 </div>
@@ -132,11 +134,13 @@ export default async function Home() {
                   <dd
                     className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
                   >
-                    <img
-                      alt=" No Hidden"
+                    <Image
+                      alt="20+ Years"
                       className="m-auto"
                       src="/images/no-hidden.png"
-                      style={{ width: "70px", height: "70px" }}
+                      width={80}
+                      height={80}
+                      priority
                     />
                   </dd>
                 </div>
@@ -157,11 +161,19 @@ export default async function Home() {
                   <dd
                     className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
                   >
-                    <img
+                    {/* <img
                       alt="Customer Support"
                       className="m-auto"
                       src="/images/responsive.png"
                       style={{ width: "70px", height: "70px" }}
+                    /> */}
+                    <Image
+                      alt="20+ Years"
+                      className="m-auto"
+                      src="/images/responsive.png"
+                      width={80}
+                      height={80}
+                      priority
                     />
                   </dd>
                 </div>
@@ -182,11 +194,19 @@ export default async function Home() {
                   <dd
                     className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
                   >
-                    <img
+                    {/* <img
                       alt="100% Safe"
                       src="/images/secure_payment.png"
                       className="m-auto"
                       style={{ width: "70px", height: "70px" }}
+                    /> */}
+                    <Image
+                      alt="20+ Years"
+                      className="m-auto"
+                      src="/images/secure_payment.png"
+                      width={80}
+                      height={80}
+                      priority
                     />
                   </dd>
                 </div>
