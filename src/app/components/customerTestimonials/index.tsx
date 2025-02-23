@@ -39,24 +39,7 @@ export default function CustomerTestimonials({ content }: any) {
       },
     ],
   };
-  const sliderData = [
-    {
-      image:
-        "https://erp-apis.avyatech.com/public/uploads/Yummycake-Christmas-banner-1.jpg",
-    },
-    {
-      image:
-        "https://erp-apis.avyatech.com/public/uploads/Yummycake-Christmas-banner-1.jpg",
-    },
-    {
-      image:
-        "https://erp-apis.avyatech.com/public/uploads/Yummycake-Christmas-banner-1.jpg",
-    },
-    {
-      image:
-        "https://erp-apis.avyatech.com/public/uploads/Yummycake-Christmas-banner-1.jpg",
-    },
-  ];
+
   const [expandedItems, setExpandedItems] = useState<boolean[]>(
     Array(content?.length).fill(false)
   );

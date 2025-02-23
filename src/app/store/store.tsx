@@ -1,20 +1,3 @@
-// "use client";
-// import { configureStore } from "@reduxjs/toolkit";
-// import settingSlice from "./slices/settingSlice";
-// import locationSlice from "./slices/locationSlice";
-
-// export const store = configureStore({
-//   reducer: {
-//     settings: settingSlice,
-//     locationsetuser: locationSlice,
-//   },
-// });
-
-// // Infer the `RootState` and `AppDispatch` types from the store itself
-// export type RootState = ReturnType<typeof store.getState>;
-// // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-// export type AppDispatch = typeof store.dispatch;
-
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -48,12 +31,12 @@ const storage =
     ? createWebStorage("local")
     : createPersistStore();
 
-let persistConfig = {
+const persistConfig = {
   key: "root",
   version: 1,
   storage,
 };
-let rootReducer = combineReducers({
+const rootReducer = combineReducers({
   settings: settingSlice,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -69,7 +52,3 @@ export const store = configureStore({
     }),
 });
 export const persistor = persistStore(store);
-// Infer the `RootState` and `AppDispatch` types from the store itself
-//export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-//export type AppDispatch = typeof store.dispatch;
