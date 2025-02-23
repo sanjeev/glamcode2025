@@ -57,6 +57,8 @@ export default function slideSlick({ content }: any) {
                   placeholder="blur"
                   blurDataURL={slide?.slider_image_base_url}
                   fill
+                  quality={75}
+                  loading="eager"
                   style={{
                     objectFit: "cover",
                   }}
