@@ -23,7 +23,9 @@ export default function ReactServices({ content }: any) {
                     objectFit: "cover",
                   }}
                   className="rounded-lg"
-                  loading="lazy"
+                  quality={10}
+                  loading="eager"
+                  priority={true}
                 />
 
                 {/* <img
