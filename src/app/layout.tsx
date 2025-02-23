@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
-
+import { Html, Head, Main, NextScript } from "next/document";
 const ReactHeader = dynamic(() => import("@/app/components/header"));
 const ReactFooter = dynamic(() => import("@/app/components/footer"));
 // import Header from "@/app/components/header";
@@ -31,24 +31,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <Head>
         <link
-          rel="stylesheet"
-          type="text/css"
+          rel="preload"
+          href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap"
+          as="style"
+        />
+        <link
+          rel="preload"
+          as="style"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
         />
         <link
-          rel="stylesheet"
-          type="text/css"
+          rel="preload"
+          as="style"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
         />
-        <link
-          href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap"
-          rel="stylesheet"
-        />
-
+      </Head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <NextTopLoader />
         <Providers>
           <ReactHeader />
