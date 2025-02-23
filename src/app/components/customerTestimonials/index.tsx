@@ -1,6 +1,7 @@
 "use client";
 import Slider from "react-slick";
 import { useState } from "react";
+
 export default function CustomerTestimonials({ content }: any) {
   const settings = {
     className: "lightbox-slide",

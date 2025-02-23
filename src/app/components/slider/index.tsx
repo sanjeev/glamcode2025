@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+
 const ReactSlider = dynamic(() => import("react-slick"), {
   loading: () => (
     <div className="w-[100%] h-[429px] bg-gray-200 animate-pulse" />

@@ -71,7 +71,7 @@ export default function Occasionspecial({ content }) {
                                             objectFit: "cover",
                                             width: "100%",
                                         }}
-                                        priority
+
                                     />
 
 
