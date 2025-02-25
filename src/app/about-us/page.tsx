@@ -7,46 +7,6 @@ export default async function Aboutus() {
     "Ghaziabad",
   ];
 
-  const deliveryOptions = [
-    { time: "Morning delivery (7:00 -9:00 am)" },
-    { time: "Standard delivery (any 4-hours slot)" },
-    { time: "Express delivery (within 1 hour)" },
-    { time: "Midnight delivery (23:00-23:59 pm)" },
-  ];
-
-  const values = [
-    {
-      title: "Mission",
-      description:
-        "Our mission is to use technology and innovation to deliver unmatched customer experience every time.",
-    },
-    {
-      title: "Vision",
-      description:
-        "Our vision is to become the one-stop shop for online cake and flower delivery platforms across the globe.",
-    },
-    {
-      title: "Ethos",
-      description:
-        "Our unique values make us the first choice for online cake and flower delivery.",
-    },
-    {
-      title: "Straightforward",
-      description:
-        "We want to be straight and honest with our customers and delivery partners. We believe that honesty is something that can help us move forward.",
-    },
-    {
-      title: "Empowering",
-      description:
-        "We equip our chefs and bakers with the proper tools and knowledge they need to innovate with the cakes and other products.",
-    },
-    {
-      title: "Accountability",
-      description:
-        "We don't believe in playing the blame game. Each member of our staff takes full accountability for their work and completes them within the given time.",
-    },
-  ];
-
   return (
     <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-4">
       {/* Header Section */}
