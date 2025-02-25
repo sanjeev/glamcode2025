@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function ReactServices({ content }: any) {
   return (
     <div className="mt-8 mb-8">
@@ -12,7 +13,7 @@ export default function ReactServices({ content }: any) {
             className="flex flex-col items-center cursor-pointer w-[140px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
           >
             <div className="w-24 h-24 md:w-40 md:h-40   overflow-hidden mb-2 relative">
-              <a href="/product-category/anniversary-cake">
+              <Link href="#">
                 <Image
                   src={item?.main_category_image_url}
                   alt={item?.name || ""}
@@ -44,7 +45,7 @@ export default function ReactServices({ content }: any) {
                   }}
                   src={item?.main_category_image_url}
                 /> */}
-              </a>
+              </Link>
             </div>
             <p className="text-center  font-[nunito] text-[16px] font-[600]">
               {item?.name}
