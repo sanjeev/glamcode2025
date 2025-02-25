@@ -55,7 +55,7 @@ const ReactKnowmore = dynamic(() => import("@/app/components/knowMore"), {
 //   };
 // }
 
-export default async ({ params }: any) => {
+export default async function Home({ params }: any) {
   const { slug } = await params;
   const data = await getProducts(slug);
   if (!data) {
@@ -242,7 +242,7 @@ export default async ({ params }: any) => {
       </div>
     </div>
   );
-};
+}
 
 async function getProducts(context: any) {
   const url1 = apiEndpoint + `/loctionSlug/${context}`;
