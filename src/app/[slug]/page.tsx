@@ -44,52 +44,77 @@ const ReactKnowmore = dynamic(() => import("@/app/components/knowMore"), {
   ),
 });
 
-export default async function Home() {
-  const data = await getProducts();
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  //const post = await getPost(params.slug);
+  return {
+    title: `Simple Next.js Blog`,
+  };
+}
 
+export default async ({ params }: any) => {
+  const { slug } = await params;
+  const data = await getProducts(slug);
   if (!data) {
     return <div>error</div>;
   }
 
-  const sliderImages: any[] = data[0].slider_images || [];
-  const maincategory: any[] = data[1].maincategory || [];
-  const bannercategory: any[] = data[1].banner || [];
-  const review: any[] = data[1].review || [];
-  const faqs: any[] = data[1].faqs || [];
-  const home: any = data[1].home || {};
+  const sliderImages: any[] = data[0]?.slider_images || [];
+  const maincategory: any[] = data[0]?.maincategory || [];
+  const bannercategory: any[] = data[0]?.banner || [];
+  const review: any[] = data[0]?.review || [];
+  const faqs: any[] = data[0]?.faqs || [];
+  const home: any = data[0]?.home[0] || {};
 
   return (
     <div className="">
-      <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
-        <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactSliderSlick content={sliderImages} />
+      {sliderImages.length > 0 && (
+        <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
+          <div className="mx-auto max-w-screen-2xl px-4">
+            <ReactSliderSlick content={sliderImages} />
+          </div>
         </div>
-      </div>
-      <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">
-        <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactServices content={maincategory} />
+      )}
+
+      {maincategory.length > 0 && (
+        <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">
+          <div className="mx-auto max-w-screen-2xl px-4">
+            <ReactServices content={maincategory} />
+          </div>
         </div>
-      </div>
-      <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
-        <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactOccasionSpecial content={bannercategory} />
+      )}
+
+      {bannercategory.length > 0 && (
+        <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
+          <div className="mx-auto max-w-screen-2xl px-4">
+            <ReactOccasionSpecial content={bannercategory} />
+          </div>
         </div>
-      </div>
-      <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">
-        <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactFaqquestions constent={faqs} />
+      )}
+      {faqs.length > 0 && (
+        <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">
+          <div className="mx-auto max-w-screen-2xl px-4">
+            <ReactFaqquestions constent={faqs} />
+          </div>
         </div>
-      </div>
-      <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
-        <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactCustomerTestimonials content={review} />
+      )}
+      {review.length > 0 && (
+        <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
+          <div className="mx-auto max-w-screen-2xl px-4">
+            <ReactCustomerTestimonials content={review} />
+          </div>
         </div>
-      </div>
-      <div className="w-full py-10 max-[1024px]:py-8  p-4 bg-[#fff]">
-        <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
-          <ReactKnowmore content={home.content} />
+      )}
+      {home.content && (
+        <div className="w-full py-10 max-[1024px]:py-8  p-4 bg-[#fff]">
+          <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
+            <ReactKnowmore content={home.content} />
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
         <div className="mx-auto max-w-screen-2xl px-4 flex justify-center gap-6">
@@ -217,10 +242,11 @@ export default async function Home() {
       </div>
     </div>
   );
-}
+};
 
-async function getProducts() {
-  const urls = [apiEndpoint + `/allslider`, apiEndpoint + `/homedata`];
+async function getProducts(context: any) {
+  const url1 = apiEndpoint + `/loctionSlug/${context}`;
+  const urls = [url1];
   try {
     const headers = {
       headers: {

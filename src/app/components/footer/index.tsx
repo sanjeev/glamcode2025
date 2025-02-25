@@ -146,33 +146,33 @@ export default function Footer() {
 
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a
+                    <Link
                       href="/about-us"
                       className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
                     >
                       {" "}
                       About Us{" "}
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
+                    <Link
                       href="/contact-us"
                       className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
                     >
                       {" "}
                       Contact Us{" "}
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
                     >
                       {" "}
                       Membership{" "}
-                    </a>
+                    </Link>
                   </li>
 
                   <li>

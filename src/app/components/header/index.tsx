@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <div>
+    <div className="shadow-md font-[sans-serif]">
       <header className="bg-white">
         <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-4">
           <div className="flex h-16 items-center justify-between">
