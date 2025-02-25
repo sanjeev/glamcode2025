@@ -1,8 +1,4 @@
 export default async function Contactus() {
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    // Handle form submission logic here
-  };
   return (
     <>
       <div className="lg:items-center relative py-5 border-gray-200 mb-5">
