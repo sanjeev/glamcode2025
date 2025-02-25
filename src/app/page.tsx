@@ -221,7 +221,6 @@ export default async function Home() {
 
 async function getProducts() {
   const urls = [apiEndpoint + `/allslider`, apiEndpoint + `/homedata`];
-
   try {
     const headers = {
       headers: {

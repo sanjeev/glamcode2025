@@ -24,7 +24,7 @@ export default function Header() {
                 <ul className="flex items-center gap-6 text-sm">
                   <li>
                     <Link
-                      className="text-[16px] font-bold  text-[#000] transition hover:text-gray-500/75"
+                      className="text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
                       href="/"
                     >
                       {" "}
@@ -34,7 +34,7 @@ export default function Header() {
 
                   <li>
                     <a
-                      className="text-[16px] font-bold  text-[#000] transition hover:text-gray-500/75"
+                      className="text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
                       href="#"
                     >
                       {" "}
@@ -43,7 +43,7 @@ export default function Header() {
                   </li>
                   <li>
                     <a
-                      className=" text-[16px] font-bold  text-[#000] transition hover:text-gray-500/75"
+                      className=" text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
                       href="#"
                     >
                       {" "}
@@ -52,7 +52,7 @@ export default function Header() {
                   </li>
                   <li>
                     <a
-                      className="text-[16px] font-bold  text-[#000] transition hover:text-gray-500/75"
+                      className="text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
                       href="#"
                     >
                       {" "}
@@ -65,14 +65,14 @@ export default function Header() {
               <div className="flex items-center gap-4">
                 <div className="flex gap-4">
                   <a
-                    className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white shadow-sm "
+                    className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white shadow-sm  gradient-border-button"
                     href="#"
                   >
                     Login
                   </a>
 
                   <a
-                    className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white shadow-sm"
+                    className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white shadow-sm gradient-border-button"
                     href="#"
                   >
                     Use App
