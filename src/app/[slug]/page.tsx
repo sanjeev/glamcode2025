@@ -44,16 +44,16 @@ const ReactKnowmore = dynamic(() => import("@/app/components/knowMore"), {
   ),
 });
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  //const post = await getPost(params.slug);
-  return {
-    title: `Simple Next.js Blog`,
-  };
-}
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { slug: string };
+// }) {
+//   //const post = await getPost(params.slug);
+//   return {
+//     title: `Simple Next.js Blog`,
+//   };
+// }
 
 export default async ({ params }: any) => {
   const { slug } = await params;
