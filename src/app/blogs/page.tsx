@@ -29,11 +29,11 @@ export default async function BlogPage() {
                 </button>
               </Link>
               {blogscat.map((post: any, index: number) => (
-                <Link href={`/blogs?category=${post.category_name}`}>
-                  <div
-                    key={index}
-                    className="flex font-bold  whitespace-pre px-4 py-2 rounded-full text-sm transition-all duration-200 bg-[#a854fc] text-white hover:text-[#000] hover:bg-gray-200 "
-                  >
+                <Link
+                  key={index}
+                  href={`/blogs?category=${post.category_name}`}
+                >
+                  <div className="flex font-bold  whitespace-pre px-4 py-2 rounded-full text-sm transition-all duration-200 bg-[#a854fc] text-white hover:text-[#000] hover:bg-gray-200 ">
                     {post?.category_name}
                   </div>
                 </Link>
