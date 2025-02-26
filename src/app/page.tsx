@@ -90,9 +90,9 @@ export default async function Home() {
           <ReactKnowmore content={home.content} />
         </div>
       </div>
-
+      {/* //dsklfjslkdjfkljsdf */}
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
-        <div className="mx-auto max-w-screen-2xl px-4 flex justify-center gap-6">
+        <div className="mx-auto max-w-screen-2xl px-4 flex flex-wrap lg:flex-nowrap justify-center gap-6">
           <div className="w-full py-10 max-[1024px]:py-8 shadow-md p-4 bg-[#fff]">
             <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
               <div className="flex justify-center flex-wrap gap-2 gap-y-7  md:gap-[12px] 2xl:gap-[36px]">

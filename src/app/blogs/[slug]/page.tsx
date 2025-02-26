@@ -1,12 +1,14 @@
 const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
 import Image from "next/image";
+import Link from "next/link";
 export default async function Page({ params }: any) {
   const { slug } = await params;
   const data: any = await getProducts(slug);
   const singleblog: any = data[0]?.blogs[0] || {};
+  const blogslist = data[1].blogs || [];
   return (
     <>
-      <div className="mb-8">
+      <div className=" bg-[#fff0f1]">
         {/* <Image
           src="/images/blogs.png"
           alt="Banner"
@@ -22,32 +24,57 @@ export default async function Page({ params }: any) {
           priority
           alt={singleblog.post_title}
         />
-      </div>
-      <div className="mx-auto max-w-screen-2xl px-4">
-        {/* <Image
-          src={singleblog?.image_url}
-          alt="Banner"
-          width={100}
-          height={30}
-          className="w-full h-80 object-cover"
-        /> */}
-        {/* <Image
-          className="mb-5 w-full   h-80  bg-no-repeat object-cover object-center"
-          src={`${singleblog?.image_url}?w=1400&auto=format`}
-          width={2000}
-          height={340}
-          priority
-          alt={singleblog.post_title}
-        /> */}
-        {singleblog && singleblog.post_content && (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(
-                singleblog.post_content.replaceAll("\r\n", " ")
-              ),
-            }}
-          />
-        )}
+        <div className="mx-auto max-w-screen-2xl px-4">
+          <div className="flex justify-center flex-col lg:flex-row gap-8 ">
+            <div className="basis-9/12 pl-4 max-[1024px]:pl-0 max-[1024px]:basis-full mb-10">
+              {singleblog && singleblog.post_content && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                      singleblog.post_content.replaceAll("\r\n", " ")
+                    ),
+                  }}
+                />
+              )}
+            </div>
+            <div className="basis-full lg:basis-3/12">
+              <div className="max-w-md mx-auto space-y-4">
+                <h3 className="font-semibold mb-2 border-b border-gray-500">
+                  Recent Posts
+                </h3>
+                <div className="overflow-y-auto max-h-[600px]">
+                  {blogslist.map((article: any, index: number) => (
+                    <Link
+                      key={index}
+                      className="d-flex recent-post"
+                      href={"/blogs/" + article.post_name}
+                    >
+                      <div
+                        key={index}
+                        className={`flex bg-[#fff] items-center p-4 mt-2 rounded-lg shadow-md border ${
+                          article.active
+                            ? "border-indigo-500"
+                            : "border-gray-200"
+                        }`}
+                      >
+                        <img
+                          src={article.image_url}
+                          alt={article.post_title}
+                          className="w-16 h-16 rounded-lg object-cover mr-4"
+                        />
+                        <div>
+                          <p className="text-sm font-semibold">
+                            {article.post_title}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

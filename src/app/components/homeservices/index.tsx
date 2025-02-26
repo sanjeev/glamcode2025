@@ -6,7 +6,7 @@ export default function ReactServices({ content }: any) {
       <p className="text-3xl font-bold text-[#000] text-center mb-8">
         Home Salon Services
       </p>
-      <div className="flex justify-center flex-wrap gap-6   md:gap-[16px] 2xl:gap-[22px]">
+      <div className="flex justify-center flex-wrap gap-2   md:gap-[16px] 2xl:gap-[22px]">
         {content?.map((item: any, index: number) => (
           <div
             key={index}
