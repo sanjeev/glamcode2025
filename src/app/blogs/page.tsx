@@ -4,19 +4,6 @@ const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
 export default async function BlogPage() {
   const data: any = await getProducts();
   const blogslist = data[0].blogs || [];
-  const posts = [
-    {
-      id: 1,
-      title: "Lorem ipsum dolor sit consectetur.",
-      author: "Ankush Sahi",
-      date: "07 April, 2024",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Mi facilisi orci sit enim.",
-      image: "https://via.placeholder.com/150",
-    },
-    // Add more posts as needed
-  ];
-
   const products = ["All", "BEAUTY", "Fitness"];
 
   return (
