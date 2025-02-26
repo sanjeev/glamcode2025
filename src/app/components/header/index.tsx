@@ -33,31 +33,31 @@ export default function Header() {
                   </li>
 
                   <li>
-                    <a
+                    <Link
                       className="text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
                       href="/about-us"
                     >
                       {" "}
                       About us{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className=" text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
                       href="/blgo"
                     >
                       {" "}
                       Blogs{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className="text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
                       href="/contact-us"
                     >
                       {" "}
                       Contact us{" "}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
