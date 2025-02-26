@@ -35,7 +35,7 @@ export default function Header() {
                   <li>
                     <a
                       className="text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
-                      href="#"
+                      href="/about-us"
                     >
                       {" "}
                       About us{" "}
@@ -44,16 +44,16 @@ export default function Header() {
                   <li>
                     <a
                       className=" text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
-                      href="#"
+                      href="/blgo"
                     >
                       {" "}
-                      Blog{" "}
+                      Blogs{" "}
                     </a>
                   </li>
                   <li>
                     <a
                       className="text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
-                      href="#"
+                      href="/contact-us"
                     >
                       {" "}
                       Contact us{" "}

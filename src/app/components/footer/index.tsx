@@ -176,23 +176,23 @@ export default function Footer() {
                   </li>
 
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/refer-earn"
                       className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
                     >
                       {" "}
                       Refer and Earn{" "}
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/wallet"
                       className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
                     >
                       {" "}
                       Wallet / Cashback{" "}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
