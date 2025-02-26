@@ -44,7 +44,7 @@ export default function Header() {
                   <li>
                     <Link
                       className=" text-[16px] font-bold  text-[#000] transition hover:text-[#a854fc]"
-                      href="/blgo"
+                      href="/blogs"
                     >
                       {" "}
                       Blogs{" "}
