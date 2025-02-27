@@ -10,7 +10,7 @@ export default function ReactServices({ content }: any) {
         {content?.map((item: any, index: number) => (
           <div
             key={index}
-            className="flex flex-col items-center cursor-pointer w-[140px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
+            className="flex flex-col items-center cursor-pointer w-[114px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
           >
             <div className="w-24 h-24 md:w-40 md:h-40   overflow-hidden mb-2 relative">
               <Link href="#">
