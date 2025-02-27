@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import MobileMenu from "./mobileMenu";
 
 const DynamicHeader = dynamic(
   () => import("@/app/components/header/mobileMenu")
