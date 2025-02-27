@@ -65,13 +65,24 @@ export default function SlideSlick({ content }: any) {
                   className="rounded-lg"
                   priority={true}
                 /> */}
-                <Image
+                {/* <Image
                   src={slide?.slider_image_base_url}
                   alt="Glam code"
                   fill
                   quality={75} // Balance performance & quality
                   priority={true} // Ensures fast loading (don't need `loading="eager"`)
                   placeholder="empty" // Remove "blur" if you don’t have a base64 blurDataURL
+                  className="rounded-lg"
+                  style={{ objectFit: "cover" }}
+                /> */}
+                <Image
+                  src={slide?.slider_image_base_url}
+                  alt="Glam code"
+                  fill
+                  quality={75}
+                  priority={true}
+                  fetchPriority="high"
+                  placeholder="empty"
                   className="rounded-lg"
                   style={{ objectFit: "cover" }}
                 />
