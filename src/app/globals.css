@@ -37,3 +37,20 @@ body {
     filter: hue-rotate(360deg);
   }
 }
+/* menu mobile */
+.slider-panel {
+  position: fixed;
+  top: 0;
+  left: -2000px; /* Initially hidden off-screen */
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease;
+}
+
+.slider-panel.open {
+  left: 0; /* Slide in when open */
+  z-index: 99999;
+}
+/* menu mobile */
