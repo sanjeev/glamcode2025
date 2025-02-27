@@ -51,7 +51,7 @@ export default async function Home() {
     return <div>error</div>;
   }
 
-  const sliderImages: any[] = data[0].slider_images || [];
+  //const sliderImages: any[] = data[0].slider_images || [];
   const maincategory: any[] = data[1].maincategory || [];
   const bannercategory: any[] = data[1].banner || [];
   const review: any[] = data[1].review || [];
