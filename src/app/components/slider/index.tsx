@@ -36,7 +36,7 @@ export default function slideSlick({ content }: any) {
   return (
     <>
       {isOpen === false ? (
-        <div className="overlay">adsasdasd</div>
+        <div className="w-[100%] h-[240px] bg-gray-200">adsasdasd</div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:grid-cols-2">
           <div className="hidden md:block  lg:block">
