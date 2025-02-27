@@ -28,7 +28,7 @@ export default function slideSlick({ content }: any) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 1000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
