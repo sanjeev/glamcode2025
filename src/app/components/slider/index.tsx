@@ -51,7 +51,7 @@ export default function SlideSlick({ content }: any) {
           {content?.map((slide: any, index: number) => {
             return (
               <div key={index} className="md:h-[440px] h-48 w-full  relative">
-                <Image
+                {/* <Image
                   src={slide?.slider_image_base_url}
                   alt="Glam code"
                   placeholder="blur"
@@ -64,6 +64,16 @@ export default function SlideSlick({ content }: any) {
                   }}
                   className="rounded-lg"
                   priority={true}
+                /> */}
+                <Image
+                  src={slide?.slider_image_base_url}
+                  alt="Glam code"
+                  fill
+                  quality={75} // Balance performance & quality
+                  priority={true} // Ensures fast loading (don't need `loading="eager"`)
+                  placeholder="empty" // Remove "blur" if you don’t have a base64 blurDataURL
+                  className="rounded-lg"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             );
