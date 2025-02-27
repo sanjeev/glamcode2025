@@ -9,7 +9,7 @@ const ReactSlider = dynamic(() => import("react-slick"), {
   ),
 });
 
-export default function slideSlick({ content }: any) {
+export default function SlideSlick({ content }: any) {
   const [isOpen, setIsOpen] = useState(false);
   const settings = {
     className: "home-slide ",
