@@ -69,7 +69,7 @@ export default function CustomerTestimonials({ content }: any) {
       </p>
       <section className="w-full">
         <div className="mx-auto max-w-screen-2xl p-4 ">
-          <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-4">
+          <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
             <Slider {...settings}>
               {content?.map((slide: any, index: any) => {
                 return (

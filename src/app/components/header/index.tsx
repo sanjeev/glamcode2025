@@ -9,8 +9,11 @@ export default function Header() {
   return (
     <div className="shadow-md font-[sans-serif]">
       <header className="bg-white">
-        <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-4">
+        <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
           <div className="flex h-16 items-center justify-between">
+            <div className="block md:hidden">
+              <DynamicHeader />
+            </div>
             <div className="flex-1 md:flex md:items-center md:gap-12">
               <Link href="/">
                 <Image
@@ -80,10 +83,6 @@ export default function Header() {
                   >
                     Use App
                   </a>
-                </div>
-
-                <div className="block md:hidden">
-                  <DynamicHeader />
                 </div>
               </div>
             </div>

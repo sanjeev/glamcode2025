@@ -2,11 +2,11 @@
 import dynamic from "next/dynamic";
 const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
 import Image from "next/image";
-const ReactSliderSlick = dynamic(() => import("@/app/components/slider"), {
-  loading: () => (
-    <div className="w-[100%] h-[429px] bg-gray-200 animate-pulse" />
-  ),
-});
+// const ReactSliderSlick = dynamic(() => import("@/app/components/slider"), {
+//   loading: () => (
+//     <div className="w-[100%] h-[429px] bg-gray-200 animate-pulse" />
+//   ),
+// });
 const ReactServices = dynamic(() => import("@/app/components/homeservices"), {
   loading: () => (
     <div className="w-[100%] h-[500px] bg-gray-200 animate-pulse" />
@@ -62,7 +62,7 @@ export default async function Home() {
     <div className="">
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
         <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactSliderSlick content={sliderImages} />
+          {/* <ReactSliderSlick content={sliderImages} /> */}
         </div>
       </div>
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">

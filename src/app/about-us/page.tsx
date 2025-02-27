@@ -8,7 +8,7 @@ export default async function Aboutus() {
   ];
 
   return (
-    <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-4">
+    <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
       {/* Header Section */}
       <div className="mb-12">
         {/* Image Grid */}
