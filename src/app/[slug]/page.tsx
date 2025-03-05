@@ -1,7 +1,7 @@
 // import Image from "next/image";
 import dynamic from "next/dynamic";
 const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
-import Image from "next/image";
+
 const ReactSliderSlick = dynamic(() => import("@/app/components/slider"), {
   loading: () => (
     <div className="w-[100%] h-[429px] bg-gray-200 animate-pulse" />
