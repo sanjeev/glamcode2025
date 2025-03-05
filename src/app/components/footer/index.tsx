@@ -147,7 +147,7 @@ export default function Footer() {
               </div>
 
               <p className="mt-4 text-white">
-                Glamcode is India's leading luxury salon-at-home service,
+                Glamcode is India&apos;s leading luxury salon-at-home service,
                 offering premium beauty and wellness treatments across 6+
                 cities, all delivered conveniently to your doorstep.
               </p>
