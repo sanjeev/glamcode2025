@@ -4,7 +4,6 @@ import Image from "next/image";
 import Locationpopup from "@/app/components/popup/Locationpopup";
 export default function ReactServices({ content, locationData }: any) {
   const [open, setOpen] = useState<boolean>(false);
-  const [loadedInClient, setLoadedInClient] = useState(false);
 
   return (
     <div className="mt-8 mb-8">
