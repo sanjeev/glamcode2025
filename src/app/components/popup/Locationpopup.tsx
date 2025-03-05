@@ -2,7 +2,7 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 export default function Locationpopup({ setOpen, onClose, locationData }: any) {
   const router = useRouter();
   // const cities = [
@@ -81,10 +81,12 @@ export default function Locationpopup({ setOpen, onClose, locationData }: any) {
                     }}
                   >
                     <div className="w-24 h-24 rounded-full overflow-hidden">
-                      <img
+                      <Image
                         src={city.image_base_url}
                         alt={city.city}
                         className="w-full h-full object-cover"
+                        width={100}
+                        height={100}
                       />
                     </div>
                     <p className="mt-2 font-semibold text-lg">{city.city}</p>
