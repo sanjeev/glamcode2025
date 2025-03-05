@@ -263,15 +263,13 @@ export default function Footer() {
 
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-3">
               <div>
-                <p className="font-medium text-gray-900   text-white text-[20px] font-black">
-                  Main Menu
-                </p>
+                <p className="text-white text-[20px] font-black">Main Menu</p>
 
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <Link
                       href="/about-us"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       About Us{" "}
@@ -281,7 +279,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/contact-us"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       Contact Us{" "}
@@ -291,7 +289,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       Membership{" "}
@@ -301,7 +299,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/refer-earn"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       Refer and Earn{" "}
@@ -311,7 +309,7 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/wallet"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-bold"
                     >
                       {" "}
                       Wallet / Cashback{" "}
@@ -321,15 +319,13 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="font-medium text-gray-900   text-white text-[20px] font-black">
-                  Serving in
-                </p>
+                <p className="text-white text-[20px] font-black">Serving in</p>
 
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       Lucknow{" "}
@@ -339,7 +335,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-bold"
                     >
                       {" "}
                       Noida{" "}
@@ -349,7 +345,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px] "
                     >
                       {" "}
                       Delhi{" "}
@@ -358,7 +354,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       Gurugram{" "}
@@ -367,7 +363,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       Ghaziabad{" "}
@@ -376,7 +372,7 @@ export default function Footer() {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 text-white font-[20px] font-bold"
+                      className="transition hover:opacity-75 text-white font-[20px]"
                     >
                       {" "}
                       G.Noida{" "}
@@ -386,7 +382,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="font-medium text-gray-900   text-white text-[20px] font-black">
+                <p className="text-white text-[20px] font-black">
                   Experience the Glamcode Mobile App
                 </p>
                 <div className="flex align-items-center mt-6">
