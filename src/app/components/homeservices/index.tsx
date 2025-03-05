@@ -1,6 +1,11 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-export default function ReactServices({ content }: any) {
+import Locationpopup from "@/app/components/popup/Locationpopup";
+export default function ReactServices({ content, locationData }: any) {
+  const [open, setOpen] = useState<boolean>(false);
+  const [loadedInClient, setLoadedInClient] = useState(false);
+
   return (
     <div className="mt-8 mb-8">
       <p className="text-3xl font-bold text-[#000] text-center mb-8">
@@ -11,25 +16,25 @@ export default function ReactServices({ content }: any) {
           <div
             key={index}
             className="flex flex-col items-center cursor-pointer w-[114px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
+            onClick={() => setOpen(true)}
           >
             <div className="w-24 h-24 md:w-40 md:h-40   overflow-hidden mb-2 relative">
-              <Link href="#">
-                <Image
-                  src={item?.main_category_image_url}
-                  alt={item?.name || ""}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA..."
-                  fill
-                  style={{
-                    objectFit: "cover",
-                  }}
-                  className="rounded-lg"
-                  quality={10}
-                  loading="eager"
-                  priority={true}
-                />
+              <Image
+                src={item?.main_category_image_url}
+                alt={item?.name || ""}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA..."
+                fill
+                style={{
+                  objectFit: "cover",
+                }}
+                className="rounded-lg"
+                quality={10}
+                loading="eager"
+                priority={true}
+              />
 
-                {/* <img
+              {/* <img
                   alt="Anniversary Cake"
                   loading="lazy"
                   decoding="async"
@@ -45,7 +50,6 @@ export default function ReactServices({ content }: any) {
                   }}
                   src={item?.main_category_image_url}
                 /> */}
-              </Link>
             </div>
             <p className="text-center  font-[nunito] text-[16px] font-[600]">
               {item?.name}
@@ -53,6 +57,13 @@ export default function ReactServices({ content }: any) {
           </div>
         ))}
       </div>
+      {open === true && (
+        <Locationpopup
+          setOpen={open}
+          onClose={() => setOpen(false)}
+          locationData={locationData}
+        />
+      )}
     </div>
   );
 }

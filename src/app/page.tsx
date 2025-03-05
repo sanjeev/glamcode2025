@@ -57,6 +57,7 @@ export default async function Home() {
   const review: any[] = data[1].review || [];
   const faqs: any[] = data[1].faqs || [];
   const home: any = data[1].home || {};
+  const locations: any[] = data[1].locations || [];
 
   return (
     <div className="">
@@ -67,7 +68,7 @@ export default async function Home() {
       </div>
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">
         <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactServices content={maincategory} />
+          <ReactServices content={maincategory} locationData={locations} />
         </div>
       </div>
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
@@ -91,130 +92,6 @@ export default async function Home() {
         </div>
       </div>
       {/* //dsklfjslkdjfkljsdf */}
-      <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">
-        <div className="mx-auto max-w-screen-2xl px-4 flex flex-wrap lg:flex-nowrap justify-center gap-6">
-          <div className="w-full py-10 max-[1024px]:py-8 shadow-md p-4 bg-[#fff]">
-            <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
-              <div className="flex justify-center flex-wrap gap-2 gap-y-7  md:gap-[12px] 2xl:gap-[36px]">
-                <div className="flex flex-col text-center  w-[171px] md:w-[296px] ">
-                  <dt className="order-last text-lg font-bold text-gray-700 ">
-                    20+ Years
-                  </dt>
-                  <dt className="order-last text-lg font-bold text-gray-500">
-                    Credibility
-                  </dt>
-
-                  <dd
-                    className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
-                  >
-                    <Image
-                      alt="20+ Years"
-                      className="m-auto"
-                      src="/images/years.png"
-                      width={80}
-                      height={80}
-                      priority
-                    />
-                  </dd>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full py-10 max-[1024px]:py-8 shadow-md p-4 bg-[#fff]">
-            <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
-              <div className="flex justify-center flex-wrap gap-2 gap-y-7  md:gap-[12px] 2xl:gap-[36px]">
-                <div className="flex flex-col text-center  w-[171px] md:w-[296px] ">
-                  <dt className="order-last text-lg font-bold text-gray-700">
-                    No Hidden
-                  </dt>
-                  <dt className="order-last text-lg font-bold text-gray-500">
-                    Charges
-                  </dt>
-
-                  <dd
-                    className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
-                  >
-                    <Image
-                      alt="20+ Years"
-                      className="m-auto"
-                      src="/images/no-hidden.png"
-                      width={80}
-                      height={80}
-                      priority
-                    />
-                  </dd>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full py-10 max-[1024px]:py-8 shadow-md p-4 bg-[#fff]">
-            <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
-              <div className="flex justify-center flex-wrap gap-2 gap-y-7  md:gap-[12px] 2xl:gap-[36px]">
-                <div className="flex flex-col text-center  w-[171px] md:w-[296px] ">
-                  <dt className="order-last text-lg font-bold text-gray-700">
-                    Responsive
-                  </dt>
-                  <dt className="order-last text-lg font-bold text-gray-500">
-                    Customer Support
-                  </dt>
-
-                  <dd
-                    className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
-                  >
-                    {/* <img
-                      alt="Customer Support"
-                      className="m-auto"
-                      src="/images/responsive.png"
-                      style={{ width: "70px", height: "70px" }}
-                    /> */}
-                    <Image
-                      alt="20+ Years"
-                      className="m-auto"
-                      src="/images/responsive.png"
-                      width={80}
-                      height={80}
-                      priority
-                    />
-                  </dd>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full py-10 max-[1024px]:py-8 shadow-md p-4 bg-[#fff]">
-            <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
-              <div className="flex justify-center flex-wrap gap-2 gap-y-7  md:gap-[12px] 2xl:gap-[36px]">
-                <div className="flex flex-col text-center  w-[171px] md:w-[296px] ">
-                  <dt className="order-last text-lg font-bold text-gray-700">
-                    100% Safe
-                  </dt>
-                  <dt className="order-last text-lg font-bold text-gray-500">
-                    & Secure Payment
-                  </dt>
-
-                  <dd
-                    className={` text-4xl font-extrabold text-blue-600 md:text-5xl setCssba  `}
-                  >
-                    {/* <img
-                      alt="100% Safe"
-                      src="/images/secure_payment.png"
-                      className="m-auto"
-                      style={{ width: "70px", height: "70px" }}
-                    /> */}
-                    <Image
-                      alt="20+ Years"
-                      className="m-auto"
-                      src="/images/secure_payment.png"
-                      width={80}
-                      height={80}
-                      priority
-                    />
-                  </dd>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

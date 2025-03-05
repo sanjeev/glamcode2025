@@ -1,6 +1,7 @@
 const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
 import Image from "next/image";
 import Link from "next/link";
+
 export default async function Page({ params }: any) {
   const { slug } = await params;
   const data: any = await getProducts(slug);
@@ -30,9 +31,7 @@ export default async function Page({ params }: any) {
               {singleblog && singleblog.post_content && (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(
-                      singleblog.post_content.replaceAll("\r\n", " ")
-                    ),
+                    __html: singleblog.post_content.replace(/\r?\n/g, " "),
                   }}
                 />
               )}
