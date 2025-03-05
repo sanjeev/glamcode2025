@@ -95,7 +95,8 @@ export default function SlideSlick({ content }: any) {
                     quality={75}
                     priority={true}
                     fetchPriority="high"
-                    placeholder="empty"
+                    placeholder="blur"
+                    blurDataURL={slide?.slider_image_base_url}
                     className="rounded-lg"
                     style={{ objectFit: "cover" }}
                   />
