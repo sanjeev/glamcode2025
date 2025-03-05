@@ -27,6 +27,7 @@ export default function SlideSlick({ content }: any) {
       <Head>
         {content?.map((slide: any, index: number) => {
           <link
+            key={index}
             rel="preload"
             as="image"
             href={slide?.slider_image_base_url}
