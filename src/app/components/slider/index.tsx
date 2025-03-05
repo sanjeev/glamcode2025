@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-
+import Head from "next/head";
 const ReactSlider = dynamic(() => import("react-slick"), {
   loading: () => (
     <div className="w-[100%] h-[429px] bg-gray-200 animate-pulse" />
@@ -23,35 +23,47 @@ export default function SlideSlick({ content }: any) {
     slidesToScroll: 1,
   };
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:grid-cols-2">
-      <div className="hidden md:block  lg:block">
-        <div className="pt-[150px]">
-          <Image
-            // loader={externaImageLoader}
-            src="/images/glam.png"
-            width={80}
-            height={80}
-            alt="Glam code"
-            priority
-          />
-          <p
-            style={{
-              fontSize: "2.5rem",
-              fontWeight: 700,
-              lineHeight: 1.2,
-            }}
-          >
-            Salon at Home for Women
-          </p>
-          <p className="spanp">⭐ 4.76(978k)</p>
+    <>
+      <Head>
+        {content?.map((slide: any, index: number) => {
+          <link
+            rel="preload"
+            as="image"
+            href={slide?.slider_image_base_url}
+            imageSrcSet={`${slide?.slider_image_base_url} 1x`}
+          />;
+        })}
+      </Head>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:grid-cols-2">
+        <div className="hidden md:block  lg:block">
+          <div className="pt-[150px]">
+            <Image
+              // loader={externaImageLoader}
+              src="/images/glam.png"
+              width={80}
+              height={80}
+              alt="Glam code"
+              priority
+            />
+            <p
+              style={{
+                fontSize: "2.5rem",
+                fontWeight: 700,
+                lineHeight: 1.2,
+              }}
+            >
+              Salon at Home for Women
+            </p>
+            <p className="spanp">⭐ 4.76(978k)</p>
+          </div>
         </div>
-      </div>
-      <div>
-        <ReactSlider {...settings}>
-          {content?.map((slide: any, index: number) => {
-            return (
-              <div key={index} className="md:h-[440px] h-48 w-full  relative">
-                {/* <Image
+        <div>
+          <ReactSlider {...settings}>
+            {content?.map((slide: any, index: number) => {
+              return (
+                <div key={index} className="md:h-[440px] h-48 w-full  relative">
+                  {/* <Image
                   src={slide?.slider_image_base_url}
                   alt="Glam code"
                   placeholder="blur"
@@ -65,7 +77,7 @@ export default function SlideSlick({ content }: any) {
                   className="rounded-lg"
                   priority={true}
                 /> */}
-                {/* <Image
+                  {/* <Image
                   src={slide?.slider_image_base_url}
                   alt="Glam code"
                   fill
@@ -75,22 +87,23 @@ export default function SlideSlick({ content }: any) {
                   className="rounded-lg"
                   style={{ objectFit: "cover" }}
                 /> */}
-                <Image
-                  src={slide?.slider_image_base_url}
-                  alt="Glam code"
-                  fill
-                  quality={75}
-                  priority={true}
-                  fetchPriority="high"
-                  placeholder="empty"
-                  className="rounded-lg"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-            );
-          })}
-        </ReactSlider>
+                  <Image
+                    src={slide?.slider_image_base_url}
+                    alt="Glam code"
+                    fill
+                    quality={75}
+                    priority={true}
+                    fetchPriority="high"
+                    placeholder="empty"
+                    className="rounded-lg"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              );
+            })}
+          </ReactSlider>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
