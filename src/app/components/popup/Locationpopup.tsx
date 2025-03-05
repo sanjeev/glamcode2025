@@ -5,14 +5,14 @@ import { useRouter } from "next/navigation";
 
 export default function Locationpopup({ setOpen, onClose, locationData }: any) {
   const router = useRouter();
-  const cities = [
-    { name: "Lucknow", img: "/images/lucknow.png", bg: "bg-green-200" },
-    { name: "Noida", img: "/images/noida.png", bg: "bg-white" },
-    { name: "Delhi", img: "/images/delhi.png", bg: "bg-blue-100" },
-    { name: "Gurugram", img: "/images/gurugram.png", bg: "bg-green-100" },
-    { name: "Ghaziabad", img: "/images/ghaziabad.png", bg: "bg-lime-100" },
-    { name: "G.Noida", img: "/images/gnoida.png", bg: "bg-orange-200" },
-  ];
+  // const cities = [
+  //   { name: "Lucknow", img: "/images/lucknow.png", bg: "bg-green-200" },
+  //   { name: "Noida", img: "/images/noida.png", bg: "bg-white" },
+  //   { name: "Delhi", img: "/images/delhi.png", bg: "bg-blue-100" },
+  //   { name: "Gurugram", img: "/images/gurugram.png", bg: "bg-green-100" },
+  //   { name: "Ghaziabad", img: "/images/ghaziabad.png", bg: "bg-lime-100" },
+  //   { name: "G.Noida", img: "/images/gnoida.png", bg: "bg-orange-200" },
+  // ];
   return (
     <Transition.Root show={setOpen} as={Fragment}>
       <Dialog
