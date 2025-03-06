@@ -82,7 +82,7 @@ export default async function Home({ params }: any) {
       {maincategory.length > 0 && (
         <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">
           <div className="mx-auto max-w-screen-2xl px-4">
-            <ReactServices content={maincategory} />
+            <ReactServices content={maincategory} slugurl={slug} />
           </div>
         </div>
       )}

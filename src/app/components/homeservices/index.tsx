@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Locationpopup from "@/app/components/popup/Locationpopup";
-export default function ReactServices({ content, locationData }: any) {
+import { useRouter } from "next/navigation";
+export default function ReactServices({ content, locationData, slugurl }: any) {
   const [open, setOpen] = useState<boolean>(false);
-
+  const router = useRouter();
   return (
     <div className="mt-8 mb-8">
       <p className="text-3xl font-bold text-[#000] text-center mb-8">
@@ -15,7 +16,13 @@ export default function ReactServices({ content, locationData }: any) {
           <div
             key={index}
             className="flex flex-col items-center cursor-pointer w-[114px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              if (slugurl) {
+                router.push(`/category/${item?.slug}/`);
+              } else {
+                setOpen(true);
+              }
+            }}
           >
             <div className="w-24 h-24 md:w-40 md:h-40   overflow-hidden mb-2 relative">
               <Image

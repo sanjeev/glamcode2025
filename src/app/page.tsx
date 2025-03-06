@@ -67,7 +67,11 @@ export default async function Home() {
       </div>
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff]">
         <div className="mx-auto max-w-screen-2xl px-4">
-          <ReactServices content={maincategory} locationData={locations} />
+          <ReactServices
+            content={maincategory}
+            locationData={locations}
+            slugurl={""}
+          />
         </div>
       </div>
       <div className="lg:items-center relative py-5 border-gray-200 bg-[#fff0f1]">

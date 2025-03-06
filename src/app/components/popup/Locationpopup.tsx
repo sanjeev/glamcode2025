@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 export default function Locationpopup({ setOpen, onClose, locationData }: any) {
   const router = useRouter();
   // const cities = [
@@ -73,12 +74,10 @@ export default function Locationpopup({ setOpen, onClose, locationData }: any) {
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {locationData.map((city: any, index: number) => (
-                  <div
+                  <Link
                     key={index}
                     className={`cursor-pointer flex flex-col items-center p-4 rounded-xl shadow-md glow-on-hover  bg-gradient-to-r text-white from-pink-500 via-purple-500 to-indigo-500`}
-                    onClick={() => {
-                      router.push(`/${city.slug}`);
-                    }}
+                    href={`/${city.slug}`}
                   >
                     <div className="w-24 h-24 rounded-full overflow-hidden">
                       <Image
@@ -90,7 +89,7 @@ export default function Locationpopup({ setOpen, onClose, locationData }: any) {
                       />
                     </div>
                     <p className="mt-2 font-semibold text-lg">{city.city}</p>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
