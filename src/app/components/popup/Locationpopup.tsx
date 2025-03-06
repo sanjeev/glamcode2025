@@ -1,11 +1,10 @@
 "use client";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import Link from "next/link";
 export default function Locationpopup({ setOpen, onClose, locationData }: any) {
-  const router = useRouter();
   // const cities = [
   //   { name: "Lucknow", img: "/images/lucknow.png", bg: "bg-green-200" },
   //   { name: "Noida", img: "/images/noida.png", bg: "bg-white" },
