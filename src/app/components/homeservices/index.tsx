@@ -4,6 +4,7 @@ import Image from "next/image";
 import Locationpopup from "@/app/components/popup/Locationpopup";
 import { useRouter } from "next/navigation";
 export default function ReactServices({ content, locationData, slugurl }: any) {
+  console.log(slugurl);
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
   return (
@@ -15,7 +16,7 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
         {content?.map((item: any, index: number) => (
           <div
             key={index}
-            className="flex flex-col items-center cursor-pointer w-[114px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
+            className="flex flex-col items-center cursor-pointer w-[90px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
             onClick={() => {
               if (slugurl) {
                 router.push(`/category/${item?.slug}/`);
