@@ -12,11 +12,11 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
       <p className="text-3xl font-bold text-[#000] text-center mb-8">
         Home Salon Services
       </p>
-      <div className="flex justify-center flex-wrap gap-2   md:gap-[16px] 2xl:gap-[22px]">
+      <div className="flex justify-between flex-wrap gap-2   md:gap-[16px] 2xl:gap-[22px]">
         {content?.map((item: any, index: number) => (
           <div
             key={index}
-            className="flex flex-col items-center cursor-pointer w-[90px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
+            className="flex flex-col items-center cursor-pointer w-[109px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
             onClick={() => {
               if (slugurl) {
                 router.push(`/category/${item?.slug}/`);
@@ -58,7 +58,7 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
                   src={item?.main_category_image_url}
                 /> */}
             </div>
-            <p className="text-center  font-[nunito] text-[16px] font-[600]">
+            <p className="text-center  font-[nunito] text-[12px] lg:text-[16px] font-[600]">
               {item?.name}
             </p>
           </div>
