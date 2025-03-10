@@ -16,7 +16,7 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
         {content?.map((item: any, index: number) => (
           <div
             key={index}
-            className="flex flex-col items-center cursor-pointer w-[109px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
+            className="flex flex-col items-center cursor-pointer w-[104px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
             onClick={() => {
               if (slugurl) {
                 router.push(`/category/${item?.slug}/`);
