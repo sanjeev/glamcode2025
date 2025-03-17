@@ -1,12 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Locationpopup from "@/app/components/popup/Locationpopup";
 import { useRouter } from "next/navigation";
+import { saveToStorage, getFromStorage } from "@/hooks/comman";
 export default function ReactServices({ content, locationData, slugurl }: any) {
-  console.log(slugurl);
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
+  useEffect(() => {
+    saveToStorage("location", JSON.stringify(locationData));
+  }, []);
+
   return (
     <div className="mt-8 mb-8">
       <p className="text-3xl font-bold text-[#000] text-center mb-8">
