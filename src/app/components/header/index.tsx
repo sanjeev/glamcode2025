@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { saveToStorage, getFromStorage } from "@/hooks/comman";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+
+import { getFromStorage } from "@/hooks/comman";
+import { Menu, MenuButton } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Locationpopup from "@/app/components/popup/Locationpopup";
 const DynamicHeader = dynamic(
@@ -13,7 +13,7 @@ const DynamicHeader = dynamic(
 );
 export default function Header() {
   const [open, setOpen] = useState<boolean>(false);
-  const router = useRouter();
+
   const locationData = getFromStorage("location") || "";
 
   return (
