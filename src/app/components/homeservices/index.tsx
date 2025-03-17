@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Locationpopup from "@/app/components/popup/Locationpopup";
 import { useRouter } from "next/navigation";
-import { saveToStorage, getFromStorage } from "@/hooks/comman";
+import { saveToStorage } from "@/hooks/comman";
 export default function ReactServices({ content, locationData, slugurl }: any) {
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
