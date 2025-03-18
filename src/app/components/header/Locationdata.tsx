@@ -2,7 +2,7 @@ import { useState, useCallback, memo } from "react";
 import { Menu, MenuButton } from "@headlessui/react";
 import dynamic from "next/dynamic";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { getFromStorage } from "@/hooks/comman";
+
 import { useSelector } from "react-redux";
 import { selectcitydata } from "@/app/store/slices/citySlice";
 import { usePathname } from "next/navigation";
