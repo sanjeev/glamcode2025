@@ -1,20 +1,31 @@
 "use client";
-import { Fragment } from "react";
+import { Fragment, memo, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-
 import Image from "next/image";
 import Link from "next/link";
-export default function Locationpopup({ setOpen, onClose, locationData }: any) {
-  // const cities = [
-  //   { name: "Lucknow", img: "/images/lucknow.png", bg: "bg-green-200" },
-  //   { name: "Noida", img: "/images/noida.png", bg: "bg-white" },
-  //   { name: "Delhi", img: "/images/delhi.png", bg: "bg-blue-100" },
-  //   { name: "Gurugram", img: "/images/gurugram.png", bg: "bg-green-100" },
-  //   { name: "Ghaziabad", img: "/images/ghaziabad.png", bg: "bg-lime-100" },
-  //   { name: "G.Noida", img: "/images/gnoida.png", bg: "bg-orange-200" },
-  // ];
+import { useDispatch } from "react-redux";
+import { selectCity } from "@/app/store/slices/citySlice";
+
+function Locationpopup({ setOpen, onClose }: any) {
+  var dispatch = useDispatch();
+  const [data, setData] = useState<any>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchData = async () => {
+      let response = await fetch("https://admin.glamcode.in/api/alllocation");
+      response = await response.json();
+      setData(response);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (data?.locations) {
+      setLoading(false);
+    }
+  }, [data]);
   return (
-    <Transition.Root show={setOpen} as={Fragment}>
+    <Transition.Root show={true} as={Fragment}>
       <Dialog
         as="div"
         className="fixed z-10 inset-0 overflow-y-auto"
@@ -32,12 +43,14 @@ export default function Locationpopup({ setOpen, onClose, locationData }: any) {
           >
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
           </Transition.Child>
+
           <span
             className="hidden sm:inline-block sm:align-middle sm:h-screen"
             aria-hidden="true"
           >
             &#8203;
           </span>
+
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -48,6 +61,7 @@ export default function Locationpopup({ setOpen, onClose, locationData }: any) {
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <div className="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+              {/* Close Button */}
               <div className="hidden sm:block absolute top-0 right-0">
                 <button
                   type="button"
@@ -71,25 +85,40 @@ export default function Locationpopup({ setOpen, onClose, locationData }: any) {
                   </svg>
                 </button>
               </div>
+
+              {/* Locations Grid */}
               <div className="grid grid-cols-3 gap-4">
-                {locationData.map((city: any, index: number) => (
-                  <Link
-                    key={index}
-                    className={`cursor-pointer flex flex-col items-center p-4 rounded-xl shadow-md glow-on-hover  bg-gradient-to-r text-white from-pink-500 via-purple-500 to-indigo-500`}
-                    href={`/${city.slug}`}
-                  >
-                    <div className="w-24 h-24 rounded-full overflow-hidden">
-                      <Image
-                        src={city.image_base_url}
-                        alt={city.city}
-                        className="w-full h-full object-cover"
-                        width={100}
-                        height={100}
-                      />
-                    </div>
-                    <p className="mt-2 font-semibold text-lg">{city.city}</p>
-                  </Link>
-                ))}
+                {loading ? (
+                  <div className="w-full h-[350px] animate-pulse">
+                    <p className="text-center text-gray-500 text-lg">
+                      Loading...
+                    </p>
+                  </div>
+                ) : (
+                  Array.isArray(data.locations) &&
+                  data.locations.map((city: any, index: number) => (
+                    <Link
+                      key={index}
+                      className="cursor-pointer flex flex-col items-center p-4 rounded-xl shadow-md glow-on-hover bg-gradient-to-r text-white from-pink-500 via-purple-500 to-indigo-500"
+                      href={`/${city.slug}`}
+                      onClick={() => {
+                        onClose();
+                        dispatch(selectCity(city));
+                      }}
+                    >
+                      <div className="w-24 h-24 rounded-full overflow-hidden">
+                        <Image
+                          src={city.image_base_url}
+                          alt={city.city}
+                          className="w-full h-full object-cover"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                      <p className="mt-2 font-semibold text-lg">{city.city}</p>
+                    </Link>
+                  ))
+                )}
               </div>
             </div>
           </Transition.Child>
@@ -98,3 +127,4 @@ export default function Locationpopup({ setOpen, onClose, locationData }: any) {
     </Transition.Root>
   );
 }
+export default memo(Locationpopup);

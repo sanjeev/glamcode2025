@@ -108,13 +108,13 @@ export default async function Home({ params }: any) {
           </div>
         </div>
       )}
-      {/* {home.content && (
+      {home.content && (
         <div className="w-full py-10 max-[1024px]:py-8  p-4 bg-[#fff]">
           <div className="mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm px-2">
             <ReactKnowmore content={home.content} />
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

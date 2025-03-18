@@ -2,20 +2,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { memo } from "react";
 
-import { getFromStorage } from "@/hooks/comman";
-import { Menu, MenuButton } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import Locationpopup from "@/app/components/popup/Locationpopup";
 const DynamicHeader = dynamic(
   () => import("@/app/components/header/mobileMenu")
 );
-export default function Header() {
-  const [open, setOpen] = useState<boolean>(false);
 
-  const locationData = getFromStorage("location") || "";
+const DynamicLocationdata = dynamic(
+  () => import("@/app/components/header/Locationdata"),
+  {
+    ssr: false,
+  }
+);
 
+function Header() {
   return (
     <>
       <div className="shadow-md font-[sans-serif]">
@@ -36,20 +36,7 @@ export default function Header() {
                   />
                 </Link>
                 <div className="hidden md:block">
-                  <Menu as="div" className="relative inline-block text-left">
-                    <MenuButton
-                      onClick={() => {
-                        setOpen(true);
-                      }}
-                      className="inline-flex w-full justify-center gap-x-1.5 rounded-lg bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
-                    >
-                      Select your Location
-                      <ChevronDownIcon
-                        aria-hidden="true"
-                        className="-mr-1 size-5 text-gray-400"
-                      />
-                    </MenuButton>
-                  </Menu>
+                  <DynamicLocationdata />
                 </div>
               </div>
               <div className="md:flex md:items-center md:gap-12">
@@ -117,13 +104,7 @@ export default function Header() {
           </div>
         </header>
       </div>
-      {open === true && (
-        <Locationpopup
-          setOpen={open}
-          onClose={() => setOpen(false)}
-          locationData={JSON.parse(locationData)}
-        />
-      )}
     </>
   );
 }
+export default memo(Header);

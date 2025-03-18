@@ -1,7 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import Locationpopup from "@/app/components/popup/Locationpopup";
+const DynamicLocationpopup = dynamic(
+  () => import("@/app/components/popup/Locationpopup"),
+  {
+    ssr: false,
+  }
+);
 import { useRouter } from "next/navigation";
 import { saveToStorage } from "@/hooks/comman";
 export default function ReactServices({ content, locationData, slugurl }: any) {
@@ -11,6 +17,9 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
     saveToStorage("location", JSON.stringify(locationData));
   }, []);
 
+  const handleOpen = useCallback(() => {
+    setOpen(true);
+  }, []);
   return (
     <div className="mt-8 mb-8">
       <p className="text-3xl font-bold text-[#000] text-center mb-8">
@@ -25,7 +34,7 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
               if (slugurl) {
                 router.push(`/category/${item?.slug}/`);
               } else {
-                setOpen(true);
+                handleOpen();
               }
             }}
           >
@@ -69,11 +78,7 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
         ))}
       </div>
       {open === true && (
-        <Locationpopup
-          setOpen={open}
-          onClose={() => setOpen(false)}
-          locationData={locationData}
-        />
+        <DynamicLocationpopup setOpen={open} onClose={() => setOpen(false)} />
       )}
     </div>
   );
