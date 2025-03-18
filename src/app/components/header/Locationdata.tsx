@@ -18,15 +18,9 @@ function Locationdata() {
 
   const city = useSelector(selectcitydata);
   const [open, setOpen] = useState<boolean>(false);
-  const [citydata, setCitydata] = useState<any>(null);
+
   const handleOpen = useCallback(() => {
     setOpen(true);
-  }, []);
-  useEffect(() => {
-    const citydata = getFromStorage("citydata") || "";
-    if (citydata) {
-      setCitydata(JSON.parse(citydata));
-    }
   }, []);
 
   return (

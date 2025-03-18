@@ -38,11 +38,11 @@ const ReactFaqquestions = dynamic(
     ),
   }
 );
-const ReactKnowmore = dynamic(() => import("@/app/components/knowMore"), {
-  loading: () => (
-    <div className="w-[100%] h-[700px] bg-gray-200 animate-pulse" />
-  ),
-});
+// const ReactKnowmore = dynamic(() => import("@/app/components/knowMore"), {
+//   loading: () => (
+//     <div className="w-[100%] h-[700px] bg-gray-200 animate-pulse" />
+//   ),
+// });
 
 // export async function generateMetadata({
 //   params,
