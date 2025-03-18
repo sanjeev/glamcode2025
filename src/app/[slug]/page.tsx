@@ -67,7 +67,7 @@ export default async function Home({ params }: any) {
   const bannercategory: any[] = data[0]?.banner || [];
   const review: any[] = data[0]?.review || [];
   const faqs: any[] = data[0]?.faqs || [];
-  const home: any = data[0]?.home[0] || {};
+  //const home: any = data[0]?.home[0] || {};
 
   return (
     <div className="">
