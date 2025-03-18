@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { selectCity } from "@/app/store/slices/citySlice";
 
 function Locationpopup({ onClose }: any) {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
