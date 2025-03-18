@@ -1,4 +1,4 @@
-import { useState, useCallback, memo, useEffect } from "react";
+import { useState, useCallback, memo } from "react";
 import { Menu, MenuButton } from "@headlessui/react";
 import dynamic from "next/dynamic";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
