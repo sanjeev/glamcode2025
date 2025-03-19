@@ -54,3 +54,7 @@ body {
   z-index: 99999;
 }
 /* menu mobile */
+
+.servicesMD {
+  box-shadow: 0px 4px 7px -2px rgb(217 74 253) !important;
+}

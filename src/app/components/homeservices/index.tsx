@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 const DynamicLocationpopup = dynamic(
   () => import("@/app/components/popup/Locationpopup"),
   {
@@ -13,6 +14,7 @@ import { saveToStorage } from "@/hooks/comman";
 export default function ReactServices({ content, locationData, slugurl }: any) {
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
+  const pathname = usePathname();
   useEffect(() => {
     saveToStorage("location", JSON.stringify(locationData));
   }, []);
@@ -20,6 +22,8 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
   const handleOpen = useCallback(() => {
     setOpen(true);
   }, []);
+  const myArray = pathname.split("-");
+
   return (
     <div className="mt-8 mb-8">
       <p className="text-3xl font-bold text-[#000] text-center mb-8">
@@ -32,7 +36,7 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
             className="flex flex-col items-center cursor-pointer w-[104px] md:w-[180px] 2xl:w-[220px]  border border-gray-100 rounded-xl shadow-md p-4"
             onClick={() => {
               if (slugurl) {
-                router.push(`/category/${item?.slug}/`);
+                router.push(`/category/${item?.slug}${myArray[0]}`);
               } else {
                 handleOpen();
               }

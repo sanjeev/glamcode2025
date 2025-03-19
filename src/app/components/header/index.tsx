@@ -85,14 +85,14 @@ function Header() {
                 <div className="flex items-center gap-4">
                   <div className="flex gap-4">
                     <a
-                      className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white shadow-sm  gradient-border-button"
+                      className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white   shadow-md glow-on-hover bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
                       href="#"
                     >
                       Login
                     </a>
 
                     <a
-                      className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white shadow-sm gradient-border-button"
+                      className="rounded-md bg-[#a854fc] px-5 py-2.5 text-[15px] font-bold  text-white   shadow-md glow-on-hover bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"
                       href="#"
                     >
                       Use App

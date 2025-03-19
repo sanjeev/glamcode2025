@@ -1,4 +1,5 @@
 // import Image from "next/image";
+//rounded-xl shadow-md glow-on-hover bg-gradient-to-r text-white from-pink-500 via-purple-500 to-indigo-500
 import dynamic from "next/dynamic";
 const apiEndpoint = process.env.NEXT_PUBLIC_APP_API_ENDPOINT;
 const ReactSliderSlick = dynamic(() => import("@/app/components/slider"), {
