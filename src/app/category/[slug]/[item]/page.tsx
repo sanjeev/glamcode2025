@@ -49,7 +49,9 @@ export default async function Page({ params }: any) {
   };
   return (
     <div className="bg-[#fff0f1]">
-      <h1 className="text-2xl font-bold text-center p-4">{name}</h1>
+      <div>
+        <h1 className="text-2xl font-bold text-center p-4">{name}</h1>
+      </div>
       {/* {slug}
       {item} */}
       <div className="">
