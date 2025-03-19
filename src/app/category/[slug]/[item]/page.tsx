@@ -26,64 +26,6 @@ export default async function Page({ params }: any) {
   const categories = data && data[0].categories ? data[0].categories : "";
 
   // Featured services data
-  const services = [
-    {
-      name: "Fruit Facial",
-      originalPrice: 1098,
-      discountedPrice: 549,
-      discount: "50%",
-      duration: "60 minutes",
-      features: [
-        "VLCC five step Facial",
-        "For blemish free & radiant complexion",
-        "Suitable for all skin types",
-      ],
-      image:
-        "https://admin.glamcode.in/user-uploads/service/97/de7bed6ebcf8efd84fbb02e0fa30d9ad.jpg.webp",
-    },
-    {
-      name: "Anti Tan Facial",
-      originalPrice: 1098,
-      discountedPrice: 549,
-      discount: "50%",
-      duration: "60 minutes",
-      features: [
-        "VLCC five step facial",
-        "Reduces tan & heals sun damaged skin",
-        "Suitable for all skin types",
-      ],
-      image:
-        "https://admin.glamcode.in/user-uploads/service/97/de7bed6ebcf8efd84fbb02e0fa30d9ad.jpg.webp",
-    },
-    {
-      name: "Red Wine Facial",
-      originalPrice: 1198,
-      discountedPrice: 599,
-      discount: "50%",
-      duration: "60 minutes",
-      features: [
-        "GlamVeda Red wine 6 step facial",
-        "Reduces fine lines, pigmentation,dark circles",
-        "For all skin types - No Paraben/SLS",
-      ],
-      image:
-        "https://admin.glamcode.in/user-uploads/service/97/de7bed6ebcf8efd84fbb02e0fa30d9ad.jpg.webp",
-    },
-    {
-      name: "Lotus Hydravital Facial",
-      originalPrice: 1398,
-      discountedPrice: 699,
-      discount: "50%",
-      duration: "60 minutes",
-      features: [
-        "Suitable for Normal to Dry skin",
-        "Refreshes and revitalizes skin cells",
-        "Maintains firmness and skin elasticity",
-      ],
-      image:
-        "https://admin.glamcode.in/user-uploads/service/97/de7bed6ebcf8efd84fbb02e0fa30d9ad.jpg.webp",
-    },
-  ];
 
   const mapItems = (items: string[]) => {
     /* {service.features?.map((feature, idx) => (
