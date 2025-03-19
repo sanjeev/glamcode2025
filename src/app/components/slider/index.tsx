@@ -117,8 +117,16 @@ export default function SlideSlick({ content }: any) {
                     placeholder="blur"
                     blurDataURL={slide?.slider_image_base_url}
                     className="rounded-lg"
+                    onLoadingComplete={(img) => {
+                      // Optional: Add animation when image loads
+                      img.classList.add("opacity-100");
+                    }}
+                    loading="eager"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
-                    style={{ objectFit: "cover" }}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
                   />
                 </div>
               );
