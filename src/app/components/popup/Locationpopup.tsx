@@ -62,7 +62,7 @@ function Locationpopup({ onClose }: any) {
           >
             <div className="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
               {/* Close Button */}
-              <div className="hidden sm:block absolute top-0 right-0">
+              <div className="absolute top-0 right-0">
                 <button
                   type="button"
                   onClick={onClose}
@@ -99,7 +99,7 @@ function Locationpopup({ onClose }: any) {
                   data.locations.map((city: any, index: number) => (
                     <Link
                       key={index}
-                      className="cursor-pointer flex flex-col items-center p-4 rounded-xl shadow-md glow-on-hover bg-gradient-to-r text-white from-pink-500 via-purple-500 to-indigo-500"
+                      className="cursor-pointer flex flex-col items-center p-0 lg:p-4 rounded-xl shadow-md glow-on-hover bg-gradient-to-r text-white from-pink-500 via-purple-500 to-indigo-500"
                       href={`/${city.slug}`}
                       onClick={() => {
                         onClose();
