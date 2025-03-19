@@ -25,8 +25,6 @@ export default async function Page({ params }: any) {
   const name = data && data[0].mainCategory ? data[0].mainCategory.name : "";
   const categories = data && data[0].categories ? data[0].categories : "";
 
-  // Featured services data
-
   const mapItems = (items: string[]) => {
     /* {service.features?.map((feature, idx) => (
                             <div
