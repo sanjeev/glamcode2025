@@ -32,6 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="preload" as="image" href="path-to-critical-images" />
+      <link rel="preconnect" href="https://admin.glamcode.in" />
+      <link rel="preconnect" href="https://admin.glamcode.in" crossorigin />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
