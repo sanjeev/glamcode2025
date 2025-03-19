@@ -46,16 +46,21 @@ export default function ReactServices({ content, locationData, slugurl }: any) {
               <Image
                 src={item?.main_category_image_url}
                 alt={item?.name || ""}
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA..."
                 fill
+                quality={60}
+                priority={true}
+                fetchPriority="high"
+                loading="eager"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onLoadingComplete={(img) => {
+                  // Optional: Add animation when image loads
+                  img.classList.add("opacity-100");
+                }}
+                className="rounded-lg transition-opacity opacity-0 duration-300"
                 style={{
                   objectFit: "cover",
+                  objectPosition: "center",
                 }}
-                className="rounded-lg"
-                quality={10}
-                loading="eager"
-                priority={true}
               />
 
               {/* <img

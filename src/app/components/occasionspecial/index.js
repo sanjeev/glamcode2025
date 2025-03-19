@@ -60,16 +60,22 @@ export default function Occasionspecial({ content }) {
                                         loader={externaImageLoader}
                                         src={`https://admin.glamcode.in/${banner.image}`}
                                         className="rounded-3"
-                                        width={280}
+                                        width={700}
                                         alt={`banner-image_${i}`}
                                         height={160}
-                                        loading="lazy"
-                                        placeholder="blur"
-                                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA..."
-                                        unoptimized={false}
+                                        quality={60}
+                                        priority={true}
+                                        fetchPriority="high"
+                                        loading="eager"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        onLoadingComplete={(img) => {
+                                            // Optional: Add animation when image loads
+                                            img.classList.add("opacity-100");
+                                        }}
+
                                         style={{
                                             objectFit: "cover",
-                                            width: "100%",
+                                            objectPosition: "center",
                                         }}
 
                                     />

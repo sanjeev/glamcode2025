@@ -87,6 +87,19 @@ export default function CustomerTestimonials({ content }: any) {
                           width={80}
                           height={80}
                           className="h-14 w-14 rounded-full object-cover"
+                          quality={60}
+                          priority={true}
+                          fetchPriority="high"
+                          loading="eager"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          onLoadingComplete={(img) => {
+                            // Optional: Add animation when image loads
+                            img.classList.add("opacity-100");
+                          }}
+                          style={{
+                            objectFit: "cover",
+                            objectPosition: "center",
+                          }}
                         />
                         <div>
                           <p className="text-lg font-medium text-gray-800">
