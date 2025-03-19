@@ -88,7 +88,7 @@ export default function SlideSlick({ content }: any) {
                   className="rounded-lg"
                   style={{ objectFit: "cover" }}
                 /> */}
-                  <Image
+                  {/* <Image
                     src={slide?.slider_image_base_url}
                     alt={slide?.alt_text || "Glam code"}
                     fill
@@ -106,6 +106,19 @@ export default function SlideSlick({ content }: any) {
                       objectFit: "cover",
                       objectPosition: "center",
                     }}
+                  /> */}
+                  <Image
+                    src={slide?.slider_image_base_url}
+                    alt="Glam code"
+                    fill
+                    quality={60}
+                    priority
+                    fetchPriority="high"
+                    placeholder="blur"
+                    blurDataURL={slide?.slider_image_base_url}
+                    className="rounded-lg"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
               );
