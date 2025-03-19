@@ -90,15 +90,22 @@ export default function SlideSlick({ content }: any) {
                 /> */}
                   <Image
                     src={slide?.slider_image_base_url}
-                    alt="Glam code"
+                    alt={slide?.alt_text || "Glam code"}
                     fill
-                    quality={75}
+                    quality={60}
                     priority={true}
                     fetchPriority="high"
-                    placeholder="blur"
-                    blurDataURL={slide?.slider_image_base_url}
-                    className="rounded-lg"
-                    style={{ objectFit: "cover" }}
+                    loading="eager"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    onLoadingComplete={(img) => {
+                      // Optional: Add animation when image loads
+                      img.classList.add("opacity-100");
+                    }}
+                    className="rounded-lg transition-opacity opacity-0 duration-300"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
                   />
                 </div>
               );
